@@ -1,0 +1,30 @@
+name: MindSpore Gitee repos mirror periodic job
+
+on:
+  pull_request:
+    paths:
+    - '.github/workflows/**'
+    # Runs at every pull requests submitted in master branch 
+    branches: [ master, main ]
+  schedule:
+    # Runs at 0,2,4,6...,22th hour every day (every 2 hours)
+    - cron:  '0 */2 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - name: Mirror the gitee/cann org repos to github/repo-mirror-test.
+      uses: Yikun/hub-mirror-action@master
+      with:
+        src: gitcode/cann
+        dst: github/repo-mirror-test
+        dst_key: ${{ secrets.SYNC_KEY_ZYK }}
+        dst_token:  ${{ secrets.SYNC_TOKEN_ZYK }}
+        account_type: org
+        clone_style: ssh 
+        force_update: true
+        white_list: "ascend-transformer-boost"
+        debug: true
+        lfs: true
