@@ -25,6 +25,6 @@ jobs:
         account_type: org
         clone_style: ssh 
         force_update: true
-        static_list: "ops-nn"
+        static_list: ${{ steps.repo.outputs.repoList }}
         debug: true
         lfs: true
