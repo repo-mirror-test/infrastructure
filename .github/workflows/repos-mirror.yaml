@@ -25,6 +25,6 @@ jobs:
         account_type: org
         clone_style: ssh 
         force_update: true
-        white_list: "ascend-transformer-boost"
+        static_list: "ops-nn"
         debug: true
         lfs: true
