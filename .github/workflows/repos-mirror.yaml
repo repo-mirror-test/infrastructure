@@ -25,6 +25,6 @@ jobs:
         account_type: org
         clone_style: ssh 
         force_update: true
-        static_list: ${{ steps.repo.outputs.repoList }}
+        static_list: "opbase, ops-math, ops-cv, ops-nn, ops-transformer, cann-recipes-infer, asnumpy, catlass, ascend-boost-comm, ascend-transformer-boost, hixl"
         debug: true
         lfs: true
