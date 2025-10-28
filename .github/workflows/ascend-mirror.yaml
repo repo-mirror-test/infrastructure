@@ -1,4 +1,4 @@
-name: CANN GitCode repos mirror periodic job
+name: Ascend GitCode repos mirror periodic job
 
 on:
   pull_request:
@@ -14,7 +14,7 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-    - name: Mirror the gitee/cann org repos to github/repo-mirror-test.
+    - name: Mirror the gitcode/ascend org repos to github/repo-mirror-test.
       uses: Yikun/hub-mirror-action@master
       with:
         src: gitcode/ascend
