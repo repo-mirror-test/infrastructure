@@ -24,5 +24,6 @@ jobs:
         account_type: org
         clone_style: ssh 
         force_update: true
+        black_list: "AscendNPU-IR-Dev"
         debug: true
         lfs: true
