@@ -14,9 +14,9 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-    - name: Get repository list exclude private and fork
-      id: repo
-      uses: yi-Xu-0100/repo-list-generator@v1.0.1
+    # - name: Get repository list exclude private and fork
+    #   id: repo
+    #   uses: yi-Xu-0100/repo-list-generator@v1.0.1
     - name: Mirror the gitcode/ascend org repos to github/repo-mirror-test.
       uses: Yikun/hub-mirror-action@master
       with:
@@ -27,6 +27,6 @@ jobs:
         account_type: org
         clone_style: ssh 
         force_update: true
-        static_list: ${{ steps.repo.outputs.repoList }}
+        static_list: "msit"
         debug: true
         lfs: true
